@@ -308,42 +308,78 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
 // ─── P12 helpers ──────────────────────────────────────────────────────────────
 function testP12Password(string $path, string $password): bool
 {
+    // Try PHP's openssl extension first
     $certs = [];
     $ok = @openssl_pkcs12_read(file_get_contents($path), $certs, $password);
-    return $ok === true;
+    if ($ok) return true;
+
+    // Fallback: use openssl CLI (handles PBES2/PBKDF2 which PHP extension sometimes can't)
+    $escPath = escapeshellarg($path);
+    $escPass = escapeshellarg($password);
+    $cmd = "openssl pkcs12 -in {$escPath} -passin pass:{$escPass} -noout -info 2>&1";
+    $output = shell_exec($cmd);
+    // openssl returns MAC verification success on valid password — check for error indicators
+    if ($output !== null && stripos($output, 'error') === false) {
+        return true;
+    }
+    return false;
 }
 
 function reencryptP12(string $srcPath, string $oldPass, string $destPath, string $newPass): bool
 {
+    // Prefer openssl CLI — handles PBES2/PBKDF2 more reliably than PHP extension
+    $escSrc = escapeshellarg($srcPath);
+    $escDst = escapeshellarg($destPath);
+    $escOld = escapeshellarg($oldPass);
+    $escNew = escapeshellarg($newPass);
+
+    $cmd = "openssl pkcs12 -in {$escSrc} -passin pass:{$escOld} "
+         . "-export -out {$escDst} -passout pass:{$escNew} "
+         . "-name cert 2>&1";
+    $out = shell_exec($cmd);
+
+    if (file_exists($destPath) && filesize($destPath) > 0 && stripos($out, 'error') === false) {
+        return true;
+    }
+
+    // PHP extension fallback
     $p12Data = file_get_contents($srcPath);
     $certs = [];
-
     if (!@openssl_pkcs12_read($p12Data, $certs, $oldPass)) {
         return false;
     }
-
-    $out = '';
-    // Re-export with new password. Preserve CA certs if present.
+    $out2 = '';
     $args = ['friendly_name' => 'cert'];
     if (isset($certs['ca']) && $certs['ca']) {
         $args['extracerts'] = $certs['ca'];
     }
-
-    $ok = @openssl_pkcs12_export($certs['cert'], $out, $certs['pkey'], $newPass, $args);
-
-    if ($ok) {
-        file_put_contents($destPath, $out);
+    if (@openssl_pkcs12_export($certs['cert'], $out2, $certs['pkey'], $newPass, $args)) {
+        file_put_contents($destPath, $out2);
+        return true;
     }
-    return $ok;
+    return false;
 }
 
 // ─── URL extraction ───────────────────────────────────────────────────────────
 function extractPlistUrl(string $link): ?string
 {
+    // Case 1: direct itms-services link with url= parameter
     if (preg_match('/url=([^&]+)/i', $link, $m)) {
         $url = urldecode($m[1]);
         return filter_var($url, FILTER_VALIDATE_URL) ? $url : null;
     }
+
+    // Case 2: gate.html?t=BASE64 where data.d is the plist URL
+    if (preg_match('/gate\.html\?t=([^&\s]+)/i', $link, $m)) {
+        $decoded = base64_decode(urldecode($m[1]), true);
+        if ($decoded) {
+            $data = json_decode($decoded, true);
+            if (isset($data['d']) && filter_var($data['d'], FILTER_VALIDATE_URL)) {
+                return $data['d'];
+            }
+        }
+    }
+
     return null;
 }
 
