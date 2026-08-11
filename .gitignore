@@ -1,0 +1,4 @@
+# NEVER commit these - they contain the GitHub token / run state
+applejr_sync_config.php
+applejr_sync_state.json
+discovered_passwords.txt
