@@ -217,6 +217,7 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
     if (!$oldPassword && $txtPassword) {
         $filePass = trim(file_get_contents($txtPassword));
         // Extract just the first word (skip binary junk from resource forks)
+        $filePass = preg_replace('/[\x00-\x1F\x7F]/', '', $filePass); // strip control chars including null
         if (preg_match('/^([a-zA-Z0-9._-]+)/', $filePass, $m)) {
             $filePass = $m[1];
         }
@@ -226,6 +227,11 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
             // Save discovered password for future use
             saveDiscoveredPassword($filePass);
         }
+    }
+
+    // Clean password before passing to shell_exec (remove null bytes)
+    if ($oldPassword) {
+        $oldPassword = preg_replace('/[\x00-\x1F\x7F]/', '', $oldPassword);
     }
 
     if (!$oldPassword) {
