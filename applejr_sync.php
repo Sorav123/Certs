@@ -9,20 +9,37 @@
  * Run via cron: 0 6 * * * php /path/to/applejr_sync.php
  */
 
-require_once __DIR__ . '/applejr_sync_config.php';
+// ─── Config: env vars first, config file as fallback ─────────────────────────
+$cfg = [];
+$cfgFile = __DIR__ . '/applejr_sync_config.php';
+if (file_exists($cfgFile)) {
+    $fileCfg = require $cfgFile;
+    if (is_array($fileCfg)) $cfg = $fileCfg;
+}
 
-// ─── Config (from config file) ────────────────────────────────────────────────
-define('GITHUB_TOKEN',   $config['github_token']);
-define('GITHUB_OWNER',   $config['github_owner']);
-define('GITHUB_REPO',    $config['github_repo']);
-define('GITHUB_BRANCH',  $config['github_branch']);
+function cfgGet(array $cfg, string $key, string $env, string $default = ''): string
+{
+    $v = getenv($env);
+    if ($v !== false && $v !== '') return $v;
+    return isset($cfg[$key]) && $cfg[$key] !== '' ? (string)$cfg[$key] : $default;
+}
 
-define('SITE_URL',       $config['site_url']);
-define('NEW_PASSWORD',   $config['new_password']);
-define('SOURCE_LINK',    $config['source_link']);
-define('PASS_CANDIDATES', $config['password_candidates']);
+define('GITHUB_TOKEN',   cfgGet($cfg, 'github_token',    'GH_TOKEN'));
+define('GITHUB_OWNER',   cfgGet($cfg, 'github_owner',    'GH_OWNER',   'Sorav123'));
+define('GITHUB_REPO',    cfgGet($cfg, 'github_repo',     'GH_REPO',    'Certs'));
+define('GITHUB_BRANCH',  cfgGet($cfg, 'github_branch',   'GH_BRANCH',  'main'));
 
-define('STATE_FILE',     $config['state_file']);
+define('SITE_URL',       cfgGet($cfg, 'site_url',        'GH_SITE',    'https://applejr.net'));
+define('NEW_PASSWORD',   cfgGet($cfg, 'new_password',    'GH_NEWPASS', 'godripyt'));
+define('SOURCE_LINK',    cfgGet($cfg, 'source_link',     'GH_SOURCE',  'https://hindipanchangtoday.com/hpt-tool'));
+
+$candidates = getenv('GH_PASSWORDS');
+define('PASS_CANDIDATES', $candidates !== false && $candidates !== ''
+    ? array_map('trim', explode(',', $candidates))
+    : (isset($cfg['password_candidates']) ? $cfg['password_candidates'] : ['1', 'AppleP12.com', 'applejr.net']));
+
+$statePath = getenv('GH_STATE') ?: ($cfg['state_file'] ?? (__DIR__ . '/applejr_sync_state.json'));
+define('STATE_FILE', $statePath);
 
 // Section selectors on the page (cat-list div IDs)
 define('SECTIONS', [
