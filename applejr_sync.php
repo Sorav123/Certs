@@ -63,7 +63,7 @@ if (!$html) {
 }
 
 $dom = new DOMDocument();
-@$dom->loadHTML($html, LIBXML_NOERROR);
+@$dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_NOERROR);
 $xpath = new DOMXPath($dom);
 
 $total = 0;
@@ -79,14 +79,14 @@ foreach (SECTIONS as $folder => $sectionId) {
     logMsg("[" . strtoupper($folder) . "] Found " . $cards->length . " entries");
 
     foreach ($cards as $card) {
-        $name = trim($xpath->query('string(.//h3)', $card));
+        $name = trim($xpath->evaluate('string(.//h3)', $card));
 
         $badge = $xpath->query('.//a[contains(@class,"badge")]', $card)->item(0);
         if (!$badge) continue;
         $link = $badge->getAttribute('href');
         if (!$link) continue;
 
-        $meta = trim($xpath->query('string(.//small[@class="meta"])', $card));
+        $meta = trim($xpath->evaluate('string(.//small[@class="meta"])', $card));
         // extract provider from "DNS • Provider"
         $provider = '';
         if (preg_match('/DNS\s*•\s*(.+)/i', $meta, $m)) {
