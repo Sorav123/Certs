@@ -50,8 +50,10 @@ define('SECTIONS', [
 ]);
 
 // ─── Bootstrap ────────────────────────────────────────────────────────────────
-error_reporting(E_WARNING);
+error_reporting(E_ALL);
 ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', sys_get_temp_dir() . '/applejr_errors.log');
 ini_set('max_execution_time', 300);
 
 $state = loadState();
@@ -94,7 +96,11 @@ foreach (SECTIONS as $folder => $sectionId) {
         }
 
         if ($folder === 'certs') {
-            if (processCertZip($link, $name, $provider)) $total++;
+            try {
+                if (processCertZip($link, $name, $provider)) $total++;
+            } catch (\Throwable $e) {
+                logMsg("  [ERR] {$name}: " . $e->getMessage());
+            }
         } else {
             if (processPlist($link, $name, $provider, $folder)) $total++;
         }
@@ -313,14 +319,15 @@ function testP12Password(string $path, string $password): bool
     $ok = @openssl_pkcs12_read(file_get_contents($path), $certs, $password);
     if ($ok) return true;
 
-    // Fallback: use openssl CLI (handles PBES2/PBKDF2 which PHP extension sometimes can't)
-    $escPath = escapeshellarg($path);
-    $escPass = escapeshellarg($password);
-    $cmd = "openssl pkcs12 -in {$escPath} -passin pass:{$escPass} -noout -info 2>&1";
-    $output = shell_exec($cmd);
-    // openssl returns MAC verification success on valid password — check for error indicators
-    if ($output !== null && stripos($output, 'error') === false) {
-        return true;
+    // Fallback: use openssl CLI if available
+    if (function_exists('shell_exec') && !in_array('shell_exec', (array)ini_get('disable_functions'), true)) {
+        $escPath = escapeshellarg($path);
+        $escPass = escapeshellarg($password);
+        $cmd = "openssl pkcs12 -in {$escPath} -passin pass:{$escPass} -noout -info 2>&1";
+        $output = shell_exec($cmd);
+        if ($output !== null && stripos($output, 'error') === false && stripos($output, 'fatal') === false) {
+            return true;
+        }
     }
     return false;
 }
