@@ -6,7 +6,6 @@
  * re-encrypts P12 certs with new password, and pushes changes to GitHub.
  *
  * Requirements: PHP 8.x, curl, zip, openssl extensions
- * Run via cron: 0 6 * * * php /path/to/applejr_sync.php
  */
 
 // ─── Config: env vars first, config file as fallback ─────────────────────────
@@ -41,12 +40,12 @@ define('PASS_CANDIDATES', $candidates !== false && $candidates !== ''
 $statePath = getenv('GH_STATE') ?: ($cfg['state_file'] ?? (__DIR__ . '/applejr_sync_state.json'));
 define('STATE_FILE', $statePath);
 
-// Section selectors on the page (cat-list div IDs)
+// Section selectors on the page (cat-list div IDs) → repo folder names
 define('SECTIONS', [
-    'esign'  => 'cat-esign',
-    'ksign'  => 'cat-zsign',
-    'scarlet' => 'cat-scarlet',
-    'certs'  => 'cat-certificate',
+    'Esign'  => 'cat-esign',
+    'Ksign'  => 'cat-zsign',
+    'Scarlet' => 'cat-scarlet',
+    'Certs'  => 'cat-certificate',
 ]);
 
 // ─── Bootstrap ────────────────────────────────────────────────────────────────
@@ -89,13 +88,12 @@ foreach (SECTIONS as $folder => $sectionId) {
         if (!$link) continue;
 
         $meta = trim($xpath->evaluate('string(.//small[@class="meta"])', $card));
-        // extract provider from "DNS • Provider"
         $provider = '';
         if (preg_match('/DNS\s*•\s*(.+)/i', $meta, $m)) {
             $provider = trim($m[1]);
         }
 
-        if ($folder === 'certs') {
+        if ($folder === 'Certs') {
             try {
                 if (processCertZip($link, $name, $provider)) $total++;
             } catch (\Throwable $e) {
@@ -153,7 +151,6 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
 
     $stateKey = "cert:" . md5($zipUrl);
 
-    // Download zip
     $zipData = fetchUrl($zipUrl);
     if (!$zipData) {
         logMsg("  [SKIP] {$certName}: failed to download zip");
@@ -171,23 +168,21 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
     }
 
     $workDir = sys_get_temp_dir() . '/applejr_cert_' . md5($zipUrl);
-    if (is_dir($workDir)) {
-        rrmdir($workDir);
-    }
+    if (is_dir($workDir)) rrmdir($workDir);
     mkdir($workDir, 0755, true);
     $zip->extractTo($workDir);
     $zip->close();
     @unlink($zipPath);
 
-    // Find files
-    $p12File = null;
-    $mobileFile = null;
-    $txtPassword = null;
+    $p12File = $mobileFile = $txtPassword = null;
 
     $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($workDir));
     foreach ($iter as $file) {
         if ($file->isDir()) continue;
-        $ext = strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION));
+        $fname = $file->getFilename();
+        if (strpos($file->getPath(), '__MACOSX') !== false) continue;
+        if (strpos($fname, '._') === 0) continue;
+        $ext = strtolower(pathinfo($fname, PATHINFO_EXTENSION));
         if ($ext === 'p12' && !$p12File) {
             $p12File = $file->getPathname();
         } elseif ($ext === 'mobileprovision' && !$mobileFile) {
@@ -215,23 +210,17 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
     }
 
     if (!$oldPassword && $txtPassword) {
-        $filePass = trim(file_get_contents($txtPassword));
-        // Extract just the first word (skip binary junk from resource forks)
-        $filePass = preg_replace('/[\x00-\x1F\x7F]/', '', $filePass); // strip control chars including null
+        $raw = file_get_contents($txtPassword);
+        $filePass = preg_replace('/[\x00-\x1F\x7F]/', '', $raw);
+        $filePass = trim($filePass);
         if (preg_match('/^([a-zA-Z0-9._-]+)/', $filePass, $m)) {
             $filePass = $m[1];
         }
         if ($filePass && testP12Password($p12File, $filePass)) {
             $oldPassword = $filePass;
             logMsg("  [PASS] {$certName}: found password via txt file: {$filePass}");
-            // Save discovered password for future use
             saveDiscoveredPassword($filePass);
         }
-    }
-
-    // Clean password before passing to shell_exec (remove null bytes)
-    if ($oldPassword) {
-        $oldPassword = preg_replace('/[\x00-\x1F\x7F]/', '', $oldPassword);
     }
 
     if (!$oldPassword) {
@@ -240,7 +229,9 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
         return false;
     }
 
-    // Re-encrypt P12 with new password
+    $oldPassword = preg_replace('/[\x00-\x1F\x7F]/', '', $oldPassword);
+
+    // Re-encrypt P12
     $newP12Path = $workDir . '/new_cert.p12';
     if (!reencryptP12($p12File, $oldPassword, $newP12Path, NEW_PASSWORD)) {
         logMsg("  [SKIP] {$certName}: P12 re-encryption failed");
@@ -248,22 +239,16 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
         return false;
     }
 
-    // Remove original P12, replace with re-encrypted version
     @unlink($p12File);
-    $newP12Name = pathinfo($p12File, PATHINFO_FILENAME) . '.p12';
-    $destP12 = dirname($p12File) . '/' . $newP12Name;
+    $destP12 = dirname($p12File) . '/' . pathinfo($p12File, PATHINFO_FILENAME) . '.p12';
     rename($newP12Path, $destP12);
 
-    // Create new password.txt (overwrite original)
     $pwdTxtPath = dirname($p12File) . '/password.txt';
-    @unlink($pwdTxtPath); // remove any existing password file
-    $pwdContent = "Password : " . NEW_PASSWORD . "\nSource   : " . SOURCE_LINK . "\n";
-    file_put_contents($pwdTxtPath, $pwdContent);
+    @unlink($pwdTxtPath);
+    file_put_contents($pwdTxtPath, "Password : " . NEW_PASSWORD . "\nSource   : " . SOURCE_LINK . "\n");
 
-    // Remove __MACOSX junk
+    // Clean up junk files
     rrmdir($workDir . '/__MACOSX');
-
-    // Remove any leftover non-p12, non-mobileprovision, non-txt files
     $cleanIter = new RecursiveIteratorIterator(
         new RecursiveDirectoryIterator($workDir, RecursiveDirectoryIterator::SKIP_DOTS),
         RecursiveIteratorIterator::CHILD_FIRST
@@ -271,8 +256,7 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
     foreach ($cleanIter as $file) {
         if ($file->isDir()) continue;
         $ext = strtolower(pathinfo($file->getFilename(), PATHINFO_EXTENSION));
-        $name = $file->getFilename();
-        if (!in_array($ext, ['p12', 'mobileprovision', 'txt']) && $name !== '.DS_Store') {
+        if (!in_array($ext, ['p12', 'mobileprovision', 'txt']) && $file->getFilename() !== '.DS_Store') {
             @unlink($file->getPathname());
         }
     }
@@ -281,14 +265,11 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
     $outZipPath = sys_get_temp_dir() . '/applejr_out_' . md5($zipUrl) . '.zip';
     $outZip = new ZipArchive();
     $outZip->open($outZipPath, ZipArchive::CREATE | ZipArchive::OVERWRITE);
-
     $outFiles = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($workDir, RecursiveDirectoryIterator::SKIP_DOTS));
     foreach ($outFiles as $file) {
         if ($file->isDir()) continue;
-        $name = $file->getFilename();
-        if ($name === '.DS_Store') continue;
-        // flatten: just use filename, no subdirectories
-        $outZip->addFile($file->getPathname(), $name);
+        if ($file->getFilename() === '.DS_Store') continue;
+        $outZip->addFile($file->getPathname(), $file->getFilename());
     }
     $outZip->close();
 
@@ -320,17 +301,14 @@ function processCertZip(string $zipUrl, string $certName, string $provider): boo
 // ─── P12 helpers ──────────────────────────────────────────────────────────────
 function testP12Password(string $path, string $password): bool
 {
-    // Try PHP's openssl extension first
     $certs = [];
     $ok = @openssl_pkcs12_read(file_get_contents($path), $certs, $password);
     if ($ok) return true;
 
-    // Fallback: use openssl CLI if available
     if (function_exists('shell_exec') && !in_array('shell_exec', (array)ini_get('disable_functions'), true)) {
         $escPath = escapeshellarg($path);
         $escPass = escapeshellarg($password);
-        $cmd = "openssl pkcs12 -in {$escPath} -passin pass:{$escPass} -noout -info 2>&1";
-        $output = shell_exec($cmd);
+        $output = shell_exec("openssl pkcs12 -in {$escPath} -passin pass:{$escPass} -noout -info 2>&1");
         if ($output !== null && stripos($output, 'error') === false && stripos($output, 'fatal') === false) {
             return true;
         }
@@ -340,32 +318,22 @@ function testP12Password(string $path, string $password): bool
 
 function reencryptP12(string $srcPath, string $oldPass, string $destPath, string $newPass): bool
 {
-    // Prefer openssl CLI — handles PBES2/PBKDF2 more reliably than PHP extension
     $escSrc = escapeshellarg($srcPath);
     $escDst = escapeshellarg($destPath);
     $escOld = escapeshellarg($oldPass);
     $escNew = escapeshellarg($newPass);
 
-    $cmd = "openssl pkcs12 -in {$escSrc} -passin pass:{$escOld} "
-         . "-export -out {$escDst} -passout pass:{$escNew} "
-         . "-name cert 2>&1";
+    $cmd = "openssl pkcs12 -in {$escSrc} -passin pass:{$escOld} -export -out {$escDst} -passout pass:{$escNew} -name cert 2>&1";
     $out = shell_exec($cmd);
-
     if (file_exists($destPath) && filesize($destPath) > 0 && stripos($out, 'error') === false) {
         return true;
     }
 
-    // PHP extension fallback
-    $p12Data = file_get_contents($srcPath);
     $certs = [];
-    if (!@openssl_pkcs12_read($p12Data, $certs, $oldPass)) {
-        return false;
-    }
+    if (!@openssl_pkcs12_read(file_get_contents($srcPath), $certs, $oldPass)) return false;
     $out2 = '';
     $args = ['friendly_name' => 'cert'];
-    if (isset($certs['ca']) && $certs['ca']) {
-        $args['extracerts'] = $certs['ca'];
-    }
+    if (isset($certs['ca']) && $certs['ca']) $args['extracerts'] = $certs['ca'];
     if (@openssl_pkcs12_export($certs['cert'], $out2, $certs['pkey'], $newPass, $args)) {
         file_put_contents($destPath, $out2);
         return true;
@@ -376,13 +344,10 @@ function reencryptP12(string $srcPath, string $oldPass, string $destPath, string
 // ─── URL extraction ───────────────────────────────────────────────────────────
 function extractPlistUrl(string $link): ?string
 {
-    // Case 1: direct itms-services link with url= parameter
     if (preg_match('/url=([^&]+)/i', $link, $m)) {
         $url = urldecode($m[1]);
         return filter_var($url, FILTER_VALIDATE_URL) ? $url : null;
     }
-
-    // Case 2: gate.html?t=BASE64 where data.d is the plist URL
     if (preg_match('/gate\.html\?t=([^&\s]+)/i', $link, $m)) {
         $decoded = base64_decode(urldecode($m[1]), true);
         if ($decoded) {
@@ -392,7 +357,6 @@ function extractPlistUrl(string $link): ?string
             }
         }
     }
-
     return null;
 }
 
@@ -406,7 +370,6 @@ function pushFile(string $path, string $b64Content, string $message): bool
         "User-Agent: AppleJr-Sync/1.0",
     ];
 
-    // Check if file exists
     $existingSha = null;
     $ch = curl_init($url);
     curl_setopt_array($ch, [
@@ -417,23 +380,17 @@ function pushFile(string $path, string $b64Content, string $message): bool
     $resp = curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-
     if ($code === 200) {
         $json = json_decode($resp, true);
-        if (isset($json['sha'])) {
-            $existingSha = $json['sha'];
-        }
+        if (isset($json['sha'])) $existingSha = $json['sha'];
     }
 
-    // Create/update
     $body = [
         'message' => $message,
         'content' => $b64Content,
         'branch' => GITHUB_BRANCH,
     ];
-    if ($existingSha) {
-        $body['sha'] = $existingSha;
-    }
+    if ($existingSha) $body['sha'] = $existingSha;
 
     $ch = curl_init($url);
     curl_setopt_array($ch, [
@@ -446,10 +403,7 @@ function pushFile(string $path, string $b64Content, string $message): bool
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
-    if ($code >= 200 && $code < 300) {
-        return true;
-    }
-
+    if ($code >= 200 && $code < 300) return true;
     logMsg("  [ERR] GitHub push failed ({$code}): " . substr($resp, 0, 200));
     return false;
 }
@@ -457,7 +411,6 @@ function pushFile(string $path, string $b64Content, string $message): bool
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function normalizeGitHubUrl(string $url): string
 {
-    // Convert github.com/owner/repo/blob/main/path -> raw.githubusercontent.com/owner/repo/main/path
     if (preg_match('#^https://github\.com/([^/]+)/([^/]+)/blob/(.+)$#', $url, $m)) {
         return "https://raw.githubusercontent.com/{$m[1]}/{$m[2]}/{$m[3]}";
     }
@@ -477,10 +430,7 @@ function fetchUrl(string $url): ?string
     $data = curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    if ($code !== 200 || !$data) {
-        return null;
-    }
-    return $data;
+    return ($code === 200 && $data) ? $data : null;
 }
 
 function sanitizeFilename(string $name): string

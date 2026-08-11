@@ -2,7 +2,6 @@ name: AppleJr Sync
 
 on:
   schedule:
-    # Daily at 06:00 UTC
     - cron: '0 6 * * *'
   workflow_dispatch: {}
   push:
@@ -28,15 +27,14 @@ jobs:
       - name: Run AppleJr sync
         run: php applejr_sync.php
         env:
-          # GitHub's built-in token, auto-provided — no secret needed.
-          # It has contents:write on this repo via the workflow permission above.
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit state (persist across runs)
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A applejr_sync_state.json discovered_passwords.txt 2>/dev/null || true
+          git add applejr_sync_state.json discovered_passwords.txt 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No state changes"
           else
