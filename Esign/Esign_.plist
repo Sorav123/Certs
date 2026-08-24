@@ -11,31 +11,15 @@
                     <key>kind</key>
                     <string>software-package</string>
                     <key>url</key>
-                    <string>https://website.khoindvn.io.vn/apps/o54hd.ipa</string>
-                </dict>
-                <dict>
-                    <key>kind</key>
-                    <string>display-image</string>
-                    <key>needs-shine</key>
-                    <false/>
-                    <key>url</key>
-                    <string>https://website.khoindvn.io.vn/img/pf/icon-57.png</string>
-                </dict>
-                <dict>
-                    <key>kind</key>
-                    <string>full-size-image</string>
-                    <key>needs-shine</key>
-                    <false/>
-                    <key>url</key>
-                    <string>https://website.khoindvn.io.vn/img/pf/icon-512.png</string>
+                    <string>https://applejr.ipadownloads.com/signed/panel/b8bgpmf2xk_applejr-93d4898e.ipa</string>
                 </dict>
             </array>
             <key>metadata</key>
             <dict>
                 <key>bundle-identifier</key>
-                <string>hk.com.hsbc.enterprise.hsbchkrewards.local2</string>
+                <string>com.applejr.b8bgpmf2xk.applejr.4125366d</string>
                 <key>bundle-version</key>
-                <string>9.3.5.0</string>
+                <string>1.0</string>
                 <key>kind</key>
                 <string>software</string>
                 <key>title</key>
