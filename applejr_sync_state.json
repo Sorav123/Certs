@@ -40,58 +40,70 @@
         "updated": "2026-08-25T06:59:48+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "35ac96c312ee063a1421a2fb015f79b92ca48f05115062fcb55e63e2d4654249",
-        "updated": "2026-08-26T07:00:50+00:00",
+        "sha": "2750cbfb52e479983e522ab10a7ab73fa268cc37238ca95bbf45e5a0d2c3b247",
+        "updated": "2026-08-27T17:34:11+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "09e1e4d0fd3242ce2265cc6462ef0bd37dff9accb12f35fd23b3906d828003fb",
-        "updated": "2026-08-26T07:00:52+00:00",
+        "sha": "138e314f113131b598eb24965d8910593828927d7db93592d675de1be1dad880",
+        "updated": "2026-08-27T17:34:12+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "29bfc7ccbdb9e7e693b20b599e3d69ffe2fcf69bb303f862aff073a749e22b32",
-        "updated": "2026-08-26T07:00:54+00:00",
+        "sha": "e307277a6a6491f97509833d43f39c47d11264a5a65e1210b7b3d48b03033324",
+        "updated": "2026-08-27T17:34:14+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "d10c3ed36038c37466e1079f18cea67d20c902d6951ed34f232f72ad90037525",
-        "updated": "2026-08-26T07:00:56+00:00",
+        "sha": "898322bb09139e7acd3b7b92da7dd361ed99204c9479dca7cac913d588a8e459",
+        "updated": "2026-08-27T17:34:15+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "a2269f4b97cb483bd79aeba614c699ff09e37b33388bb2d747430c585af692b9",
-        "updated": "2026-08-26T07:00:57+00:00",
+        "sha": "6ff3c19bc8ba029bbb4d5262d6a9ac18930ca23f829b971fa09f1b8e9821be10",
+        "updated": "2026-08-27T17:34:16+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "b1fc9f9a0449cc507cd4109dc7d096cfcab5aa53e4f84530f53966d6b92a650b",
-        "updated": "2026-08-26T07:00:59+00:00",
+        "sha": "a8f3493fccde893b93557b58e034e39e2c706b70d8de2aa9502cb1517b8d948a",
+        "updated": "2026-08-27T17:34:18+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "1f60be1a4f3fc725cc9893b4eb77bf84172b8918105aeadbe380114355652cec",
-        "updated": "2026-08-26T07:01:00+00:00",
+        "sha": "12a028c7baff0f23b10742e94978ff5219eb80d1f05f45a3038d5eed3588b7af",
+        "updated": "2026-08-27T17:34:20+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "55568c75b4524884e34c9c8d5a866b50e549e4cd70b614054aa271ab70b2b117",
-        "updated": "2026-08-26T07:01:02+00:00",
+        "sha": "30bf4b4f8092cfaf7aa758c0f33438f57e63a2b100ca06e5ca01ac7ea8a90af7",
+        "updated": "2026-08-27T17:34:21+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "32349a64a0e5491b21ebbfd43133e9a4c80100ed0506bfb48245781c139f53e5",
-        "updated": "2026-08-26T07:01:03+00:00",
+        "sha": "9e3ec5c5421fc3106ad14263421bbaf58d2f7f0873d731e7d1a67f493fa657ae",
+        "updated": "2026-08-27T17:34:22+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "df20bfdbb5631534f6b2d0aeb5704e7150f4145e9d70a8bae3d531714b95900a",
-        "updated": "2026-08-26T07:01:05+00:00",
+        "sha": "850022e3ab988659b75800b4683613da65e2ee34cb5649fb8a5d34585a29e8ca",
+        "updated": "2026-08-27T17:34:24+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "dcd820c93b7f7e5acab77219cf22cba89cce90d65742047fe6b563df1ebbe7e1",
-        "updated": "2026-08-26T07:01:06+00:00",
+        "sha": "182dcefa75b8817dac373f53cc7c5c18af945a788802970236d1f9fdb26761db",
+        "updated": "2026-08-27T17:34:25+00:00",
         "pushed": true
+    },
+    "plist:Esign\/Esign_HSBC_Bank.plist": {
+        "sha": "e17b6e5f75e4820e8e17af3877b1ec7c9db883893b25d87476670ad9c86ba5af",
+        "updated": "2026-08-27T17:33:45+00:00"
+    },
+    "plist:Ksign\/Ksign_HSBC_Bank.plist": {
+        "sha": "ec19e02402f572be8af86785e2c677eec826c1477623f1a506589613262c200d",
+        "updated": "2026-08-27T17:33:56+00:00"
+    },
+    "plist:Scarlet\/Scarlet_HSBC_Bank.plist": {
+        "sha": "8b2665afb88aae2ffaabf500080ac25dbd3b35f700760309daa12befbc6c7478",
+        "updated": "2026-08-27T17:34:02+00:00"
     }
 }
