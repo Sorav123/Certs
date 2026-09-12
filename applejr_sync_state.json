@@ -12,8 +12,8 @@
         "updated": "2026-08-25T06:59:36+00:00"
     },
     "plist:Ksign\/Ksign_CenPower.plist": {
-        "sha": "bfafccbb2f821d07797f1204645686ea3f7b4e22193fdee0d923dc23be874c23",
-        "updated": "2026-08-25T06:59:38+00:00"
+        "sha": "7babeefcde90b7c45add94a53659fe22248ed7260b13c9bb0c7d7b9d1140fb56",
+        "updated": "2026-09-12T10:34:09+00:00"
     },
     "plist:Ksign\/Ksign_Jiangsu_Simcere.plist": {
         "sha": "ee0f5848051c5f62f6f65a3fd756c9472d35801175dbe834908ce501488d6f79",
@@ -32,66 +32,66 @@
         "updated": "2026-08-25T06:59:45+00:00"
     },
     "plist:Scarlet\/Scarlet_CenPower.plist": {
-        "sha": "fba36d0667f54121470f159faf35197acd20854b2a5e51f2d0480439ffbb8c65",
-        "updated": "2026-08-25T06:59:46+00:00"
+        "sha": "9df1220404843491972432e7ba7f6323eae821a89c6cab40761a8013245673c5",
+        "updated": "2026-09-12T10:34:19+00:00"
     },
     "plist:Scarlet\/Scarlet_Commi.plist": {
-        "sha": "fba36d0667f54121470f159faf35197acd20854b2a5e51f2d0480439ffbb8c65",
-        "updated": "2026-08-25T06:59:48+00:00"
+        "sha": "9df1220404843491972432e7ba7f6323eae821a89c6cab40761a8013245673c5",
+        "updated": "2026-09-12T10:34:21+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "9643979bbef9de4d6ef7861d36caa336ad50fb429d3f5fa1cb38be232a31dec9",
-        "updated": "2026-09-11T11:05:10+00:00",
+        "sha": "14bfe2500489944367e2b6e25f03ee0b2964066689f61b8b3b9b657bbeb0260e",
+        "updated": "2026-09-12T10:34:36+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "903fb1721a7245cf2f9a5b529ed893642387035dc3a8a0e7524d930810e07be9",
-        "updated": "2026-09-11T11:05:12+00:00",
+        "sha": "d0928d82f29a94c0e94997dd13bcabf1e25305163fa869d2d01f315bfa2be97c",
+        "updated": "2026-09-12T10:34:37+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "0946d569b77530e6cf81b5dd1a4e09765f1dcb14cdd479251dd8e65d7d34052e",
-        "updated": "2026-09-11T11:05:13+00:00",
+        "sha": "80aa82837b85668cf86da722aa0e2a5d0a223a897c604aa3c574e1b493dcaa4e",
+        "updated": "2026-09-12T10:34:39+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "69358b3b6d6645813f299440fb962c82a8154ad3471ed6db6f0f0d667919906e",
-        "updated": "2026-09-11T11:05:15+00:00",
+        "sha": "86c2587cad7c2d58b012f875070e0cef195ed5a3e7356f6cccc5c473aa127ee5",
+        "updated": "2026-09-12T10:34:40+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "9ae64181371fdb6ba98f5b533eabb57565b345f99e3b9941440c587833bbd614",
-        "updated": "2026-09-11T11:05:16+00:00",
+        "sha": "865d3443bcab10c9f32962c9014e02633fd27fc5a60a4885bb000d5d80b497f2",
+        "updated": "2026-09-12T10:34:41+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "5a0c79016aad3e4b645d17a9356d79a19933370e5515a6dfe0aa750bc2ea6348",
-        "updated": "2026-09-11T11:05:18+00:00",
+        "sha": "a9f4ed3bf132a733608243e722b151caa745c29d556017ddbaeda6ed3f6bad44",
+        "updated": "2026-09-12T10:34:43+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "5d5b984a3e96e66c77fc36b0e7c1ec76d2344e96a5c168b7298a0d83baab5d71",
-        "updated": "2026-09-11T11:05:20+00:00",
+        "sha": "bab60f07c14b3819b746668d5385947ffbc22ef1844d0104da66de23f7df2d15",
+        "updated": "2026-09-12T10:34:44+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "30fccb4c02ffa99934b953bb9db583c71c45ff43ee015d540afbc37512e152c2",
-        "updated": "2026-09-11T11:05:22+00:00",
+        "sha": "059f0ea15dd7095c5a45989e80eb1ec0c04c4228c6528c06b92caf348fa11e8f",
+        "updated": "2026-09-12T10:34:45+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "31529b5cca9663e3b8947e9e363ab9ae5b047fe2b1fd99cc6a339e23cd0dac06",
-        "updated": "2026-09-11T11:05:24+00:00",
+        "sha": "1cb1a153b9f1bfa81fcf6445cd3992e86334d2880070c787825d0da4db363a7b",
+        "updated": "2026-09-12T10:34:47+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "246628cc7ed3ca60a754b711ab244e73e1d82b5da4f9db70c1bef331b6f6c8f1",
-        "updated": "2026-09-11T11:05:26+00:00",
+        "sha": "a70a3026ad1185d05ad87b8cba9523a33c26453faf588cdff36c1232f28121b4",
+        "updated": "2026-09-12T10:34:48+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "d0cc5b9e5e2c76d826c3742f4bbe5b450a6678bd8bc9fbe41afcb293ea8177f1",
-        "updated": "2026-09-11T11:05:28+00:00",
+        "sha": "5466ad0b7f2ca1430f149e0fe2aa4c6ec9805b87d10e4bc68856a5ef5c247320",
+        "updated": "2026-09-12T10:34:50+00:00",
         "pushed": true
     },
     "plist:Esign\/Esign_HSBC_Bank.plist": {
@@ -103,19 +103,103 @@
         "updated": "2026-08-27T17:33:56+00:00"
     },
     "plist:Scarlet\/Scarlet_HSBC_Bank.plist": {
-        "sha": "8b2665afb88aae2ffaabf500080ac25dbd3b35f700760309daa12befbc6c7478",
-        "updated": "2026-08-27T17:34:02+00:00"
+        "sha": "727afe9a8416a2386deed95bbda6d9f097c7937ea6c1b5fb18e7b589fab011c0",
+        "updated": "2026-09-12T10:34:17+00:00"
     },
     "plist:Esign\/Esign_National.plist": {
-        "sha": "3fa6bc3cc277b8beb22c6a56677a8fc1de2f3259091dc53a4edf6698805c9173",
-        "updated": "2026-09-04T11:04:30+00:00"
+        "sha": "db3897f9f4a4f1630918d8c8ed1fb7880d60f6c66dd1e3ac85e0b78a1d7c0c6a",
+        "updated": "2026-09-12T10:33:41+00:00"
     },
     "plist:Esign\/Esign_CenPower_2.plist": {
-        "sha": "3b29e4e9fce9fe4a4e73e8a4ecaa4020e84658a041d0e2a99dff09629124788d",
-        "updated": "2026-09-04T11:04:34+00:00"
+        "sha": "6a4fb94cb89715e4f601bb0a26e95642b532663607a04138cfcf8ab46b0c7bff",
+        "updated": "2026-09-12T10:33:44+00:00"
     },
     "plist:Ksign\/Ksign_China_Limited.plist": {
-        "sha": "739c6d7de4b44ab2245cbe48d613003e4d78ffa3108e7ef1c983ab8d245434b3",
-        "updated": "2026-09-09T11:09:41+00:00"
+        "sha": "454b90fc2336cac770391d3e28aead1e60943a7b5192af5c401a086380501291",
+        "updated": "2026-09-12T10:34:07+00:00"
+    },
+    "plist:Esign\/Esign_Qingdao.plist": {
+        "sha": "705e30eda4b300fc5fa61490e48bf9cdb756d0e45d1807f6eb081506ec5b701c",
+        "updated": "2026-09-12T10:33:46+00:00"
+    },
+    "plist:Esign\/Esign_Jiangsu_Simcere_1.plist": {
+        "sha": "29f83cedadbcfe1c11a328890e731805a440e02ac165210eaa3b156ae19ba6b6",
+        "updated": "2026-09-12T10:33:48+00:00"
+    },
+    "plist:Esign\/Esign_Vietnam_Rubber.plist": {
+        "sha": "765936a30e18338bce82ad6dbcfb4a9be219332f7955bbeb1549c16b2114bdfb",
+        "updated": "2026-09-12T10:33:50+00:00"
+    },
+    "plist:Esign\/Esign_Moving_Increasingly_1.plist": {
+        "sha": "459ba34af08a652e40ebfb555a4f6abd4dd3dd97cf1d0373d00a81a031d12c85",
+        "updated": "2026-09-12T10:33:52+00:00"
+    },
+    "plist:Esign\/Esign_Moving_Increasingly_2.plist": {
+        "sha": "dee009db42d855b96aee369cfc01aecb9b31d145416d19e9aa134f419208f812",
+        "updated": "2026-09-12T10:33:53+00:00"
+    },
+    "plist:Esign\/Esign_Vietnam_Airlines.plist": {
+        "sha": "605f4dbf931ddc0308764abb60e3d3c0f3d46e02755a3a16095893e342d9d99b",
+        "updated": "2026-09-12T10:33:55+00:00"
+    },
+    "plist:Esign\/Esign_China_Telecom.plist": {
+        "sha": "a2544190e2f1297dd016ec4f601b20e645fb8c264882e1925ab5cd611ba10dbd",
+        "updated": "2026-09-12T10:33:56+00:00"
+    },
+    "plist:Esign\/Esign_Xibei.plist": {
+        "sha": "141dafab2ecf36065a528eacf500fd776844cca6d3a1203fc93bee9460d0d11d",
+        "updated": "2026-09-12T10:33:58+00:00"
+    },
+    "plist:Esign\/Esign_Aramco_Services.plist": {
+        "sha": "fff201393c1dc3adbf54976b4499bf8535fa81462922baffdd7dfdfe173c38c7",
+        "updated": "2026-09-12T10:34:01+00:00"
+    },
+    "plist:Esign\/ESign_XL_Axiata.plist": {
+        "sha": "70bded990ac23e0b4885c728bd0fdfb61a1c0df4888132497a9510bcc1ac16d9",
+        "updated": "2026-09-12T10:34:02+00:00"
+    },
+    "plist:Esign\/Esign_Luoyang.plist": {
+        "sha": "e3ab57b03df6cbda8d9cde071e346f228fa6fe9f2cde3c1f85e42b7252b21012",
+        "updated": "2026-09-12T10:34:05+00:00"
+    },
+    "plist:Ksign\/Ksign_Vietnam_Rubber.plist": {
+        "sha": "bc71f25fda66f52f29e7f30ff96343e97b418c2e4837aa472e7aa32a0724ba20",
+        "updated": "2026-09-12T10:34:11+00:00"
+    },
+    "plist:Ksign\/Ksign_Vietnam_Airlines.plist": {
+        "sha": "dd9d32b3920a35bfca7b85f7e64150a03bc973e00bfcaca423defee04d0461a3",
+        "updated": "2026-09-12T10:34:13+00:00"
+    },
+    "plist:Ksign\/Ksign_Luoyang.plist": {
+        "sha": "4c39fbf32e72e88a924bf2b556e8a0f6a8ec5988a586f5fbe042504b5f34554b",
+        "updated": "2026-09-12T10:34:15+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Qingdao.plist": {
+        "sha": "bb257c310f01d7f7b09ac4cf01ad398dbfbb67c21db0d9cfedab1ed32e048c8b",
+        "updated": "2026-09-12T10:34:22+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Jiangsu_Simcere.plist": {
+        "sha": "2a07cc5f224911743daf5b2c07e2c1a6be96653bcdb99dacb427919708e354aa",
+        "updated": "2026-09-12T10:34:24+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Vietnam_Rubber.plist": {
+        "sha": "dc93985acd3ae9a4cd92809bb0ab99daa1405b24cf3eb04fa9683f487e31822f",
+        "updated": "2026-09-12T10:34:26+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Moving_Increasingly.plist": {
+        "sha": "181a248e393192335419ec9128c3cb0f3907f644601fd4691610d6c0186c6c7d",
+        "updated": "2026-09-12T10:34:29+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Vietnam_Airlines.plist": {
+        "sha": "69b94e2a58e5150354a3442e62fda457c20eac096d4b1c8f65f134f3f06260b7",
+        "updated": "2026-09-12T10:34:31+00:00"
+    },
+    "plist:Scarlet\/Scarlet_China_Telecom.plist": {
+        "sha": "c3cd6c9ea7f4a2f343581dd6fdf4722a54c973ac72713fd540cddf8a869fc32c",
+        "updated": "2026-09-12T10:34:32+00:00"
+    },
+    "plist:Scarlet\/Scarlet_Xibei.plist": {
+        "sha": "ded2e23d638402dc292ad1918140832d2a8b19aba168a72adde01bddef3cc32e",
+        "updated": "2026-09-12T10:34:34+00:00"
     }
 }
