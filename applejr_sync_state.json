@@ -40,58 +40,58 @@
         "updated": "2026-09-12T10:34:21+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "2e81dad9637274bda158a6d4cffbfda94dbed190a2610bc55c69bd222df97b23",
-        "updated": "2026-10-14T11:38:19+00:00",
+        "sha": "ff2afaf19d57fe4bc8fee97a1763e796ee5ecc2cee1e3eeb5293c7c067d7480d",
+        "updated": "2026-10-15T11:17:00+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "241bf1bb7c590f0624f69eb3dcfdb1a1daa43a16228cfd3e050ffacbe0b3aa64",
-        "updated": "2026-10-14T11:38:21+00:00",
+        "sha": "2bccfe54ce47ec051e70f25fa0bfeeefbcf72bfdda311773bce99b5a6b1024ba",
+        "updated": "2026-10-15T11:17:03+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "5fa0edf9ef500660e1a73ed847d3571c8cd39f2b35e4d638625a06814c19f3dd",
-        "updated": "2026-10-14T11:38:23+00:00",
+        "sha": "e5b48439adcf45d62548923213e7749a2d07888ad05da311ae732ed3a2fb3d23",
+        "updated": "2026-10-15T11:17:05+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "8f619b8ed502f37f42b03732219ae8c6e5f9f5d271e2e47bca2e78f692fc7219",
-        "updated": "2026-10-14T11:38:25+00:00",
+        "sha": "ea9669b13389089498d4d793495a650908e89799628cdea592fe859a63cec98c",
+        "updated": "2026-10-15T11:17:07+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "cdc91fe25189c44c9c37ce0015101343c9348e8958711e81af9d159558d0658e",
-        "updated": "2026-10-14T11:38:27+00:00",
+        "sha": "2753d35254bb34070d721e4db02e12ff5f72be1b72ae6531144ddd9fa5f739a5",
+        "updated": "2026-10-15T11:17:09+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "15817446cc8305fe452c31e86835f6148e30bb2f825e96d289658e78706f1252",
-        "updated": "2026-10-14T11:38:28+00:00",
+        "sha": "926fb9a032e062753a4e54d4b130944d64c045727eb39ebce875ee9b14541fea",
+        "updated": "2026-10-15T11:17:11+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "d01b7695bbd5a68a1fd26b2403786667c389f35560533e7e903282a1dde4a13c",
-        "updated": "2026-10-14T11:38:30+00:00",
+        "sha": "6ca6c4d7194bf9dfcc951bd3e6a0eda47861b0220b44d8a1f67924e38ec04f53",
+        "updated": "2026-10-15T11:17:12+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "eb2980688e9a914de431e271e4e91716e17fc13fd6bec46f6ff5737821c613f3",
-        "updated": "2026-10-14T11:38:33+00:00",
+        "sha": "8f2771a5e1506a8fe373106e608bcc12d867fb173ba61f77898f92614715333a",
+        "updated": "2026-10-15T11:17:14+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "ac29eb1eb7e08eab2834669752a907828fd26dbf2a41edd1c122814547854f40",
-        "updated": "2026-10-14T11:38:35+00:00",
+        "sha": "7ba778d99066d5adbd778229b8cbbfbcb096cfed61897c7e4d3a31819e535d84",
+        "updated": "2026-10-15T11:17:16+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "46ced4e7bd718fea5ca707c78e851b80d53135ecc8904f0dca8c50316674d0e4",
-        "updated": "2026-10-14T11:38:37+00:00",
+        "sha": "8b69587af36410f143bebff1a2a34a2aa022234465250bc9fe82ee9255b88eaf",
+        "updated": "2026-10-15T11:17:18+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "6dedf8942731e5c88e566a83fa2322164ccced56f154c462de96a42c0ceb09a2",
-        "updated": "2026-10-14T11:38:38+00:00",
+        "sha": "479a6afb63a9ed7ffe1efce2227e651a219af472f3cfe05f56d76650bd65d99e",
+        "updated": "2026-10-15T11:17:19+00:00",
         "pushed": true
     },
     "plist:Esign\/Esign_HSBC_Bank.plist": {
@@ -207,8 +207,8 @@
         "updated": "2026-09-28T13:37:58+00:00"
     },
     "plist:Ksign\/Ksign_VINWASH.plist": {
-        "sha": "2943031c2779be3ca4dfd9114950e57c5f289b5375e9152aca820ff0d2505d66",
-        "updated": "2026-09-19T10:45:22+00:00"
+        "sha": "c627e2b2ee0ee093c48313a382ec0ae7bbb47f0fc1889013412033240727892b",
+        "updated": "2026-10-15T11:16:47+00:00"
     },
     "plist:Scarlet\/Scarlet_Vinwash.plist": {
         "sha": "62c5c78ab569372d02aa1c8b0ee5366a7a19a834b7018db6f204d2bc71d9cfa3",
@@ -243,8 +243,8 @@
         "updated": "2026-10-13T14:01:13+00:00"
     },
     "plist:Ksign\/Ksign_Vietnam_Electricity.plist": {
-        "sha": "132e3c790a2fbcbe15f34f82a66df7943a80468ea6a7ceb3f4db88fa6e1b76fd",
-        "updated": "2026-10-13T14:01:27+00:00"
+        "sha": "3745f75e188161873e6b2a3360ca4bc63dcaf4c55dbb4fae7f43f5e2e5435224",
+        "updated": "2026-10-15T11:16:45+00:00"
     },
     "plist:Scarlet\/Scarlet_Vietnam_Electricity.plist": {
         "sha": "7977d4596429d21a8dba4f17cf26be0c4d1a5d5d31305364c6f3351fb365d5e9",
