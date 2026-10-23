@@ -1,7 +1,7 @@
 {
     "plist:Esign\/Esign_.plist": {
         "sha": "13f49ec8254fc87e7b0f89962e323160c4e44b4a495467e94934619ca4af1e5e",
-        "updated": "2026-10-22T11:36:15+00:00"
+        "updated": "2026-10-23T11:25:32+00:00"
     },
     "plist:Esign\/Esign_CenPower.plist": {
         "sha": "51e484fdd843f99732e339019298eb5cffac5654513fca4628ba1e3c92db3779",
@@ -9,7 +9,7 @@
     },
     "plist:Ksign\/Ksign_.plist": {
         "sha": "26bf252f0269429b1bb9abed177275bde33aa9ba551b142d7e40e309eddde0b4",
-        "updated": "2026-10-22T11:36:31+00:00"
+        "updated": "2026-10-23T11:25:45+00:00"
     },
     "plist:Ksign\/Ksign_CenPower.plist": {
         "sha": "7babeefcde90b7c45add94a53659fe22248ed7260b13c9bb0c7d7b9d1140fb56",
@@ -29,7 +29,7 @@
     },
     "plist:Scarlet\/Scarlet_.plist": {
         "sha": "acc1aa7873b994721ebfee66ad7d50d2e5aa15d8c4c20e66e3bcdc3a54656e2e",
-        "updated": "2026-10-22T11:36:40+00:00"
+        "updated": "2026-10-23T11:25:56+00:00"
     },
     "plist:Scarlet\/Scarlet_CenPower.plist": {
         "sha": "9df1220404843491972432e7ba7f6323eae821a89c6cab40761a8013245673c5",
@@ -40,58 +40,58 @@
         "updated": "2026-09-12T10:34:21+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "872d9cfe4ae79ef1df57034e90a2b3de461cafb20405f70a18f667fa8a388fbe",
-        "updated": "2026-10-22T11:36:52+00:00",
+        "sha": "95098b5d9e4b90c6d332dcf041c998045587a3dd1db4336761319cd6868d6f27",
+        "updated": "2026-10-23T11:26:12+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "dada97557e2fd8cf8b1ec5582bdca24ecb433b2b000b31477b83bfb2bf720bff",
-        "updated": "2026-10-22T11:36:54+00:00",
+        "sha": "9e22e7a70566d75196c0d9745d495ac0bb2c8ce21ee776d1ac27a7178f40791f",
+        "updated": "2026-10-23T11:26:15+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "a6af850b04c0f8345c63d4b09f94848dc7665000eb574c510a0728d36d64b96c",
-        "updated": "2026-10-22T11:36:56+00:00",
+        "sha": "a07941e3958251edc55cc80b07862eb3d1f59eb64564f1eaecda55ef8d363ed8",
+        "updated": "2026-10-23T11:26:16+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "6e84f0d3264d6e81ad43d1fd7f94e30d9ea1e2de0ba330779252d093250ffbbf",
-        "updated": "2026-10-22T11:36:58+00:00",
+        "sha": "5039f7f1d6a8bad151deec99a6bb07d349576ba104ad6dc6b39fdac6b19b0244",
+        "updated": "2026-10-23T11:26:18+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "0f97f8490ea13254de635c09582d936e5b94da9aff7c19a9a8d08b9de9df584e",
-        "updated": "2026-10-22T11:36:59+00:00",
+        "sha": "ffc076ccbb13f2124bf7e9bb95df01efbb714c4a7cbcc5f0f4ca718461472a15",
+        "updated": "2026-10-23T11:26:20+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "43733e56ce85939f27f7f6702449b96b43a7f2c53a4940b608bbab4fd94350f5",
-        "updated": "2026-10-22T11:37:01+00:00",
+        "sha": "6a7b77100bbdaac8e638a3ef313ba0ee4ecb106c88b05792eb94202e07d50af4",
+        "updated": "2026-10-23T11:26:21+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "7a9f37538e63a20f62c7be2c7b8fc0665a30cf4f589ac00087873433b22e32ad",
-        "updated": "2026-10-22T11:37:03+00:00",
+        "sha": "90775a139313a2599a2eb1549f2f32405c0bac350f2230d5d9c1b94a58a092d3",
+        "updated": "2026-10-23T11:26:23+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "718939d8f201f55338442f185954ce036d490c8cb897c37a088e8155236a793c",
-        "updated": "2026-10-22T11:37:05+00:00",
+        "sha": "cab03eb4cf1c3b16037505157d5558b4ca6505d921f5f04143b1e765ab51a614",
+        "updated": "2026-10-23T11:26:25+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "b26f5a06deffbedc0fa81b340786f56d1d37fb733b1d4a755f1c2356713fe5fd",
-        "updated": "2026-10-22T11:37:07+00:00",
+        "sha": "dc497eb52f1d8b205f8cd48cce62cc1048e66783800dfb83de6f478f76a1477b",
+        "updated": "2026-10-23T11:26:27+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "f5fabb81b7e62c66b6768a7242a6b04e5676f68ca641c53aaf95bce95df21e3c",
-        "updated": "2026-10-22T11:37:10+00:00",
+        "sha": "defedc9f1e2973e828552d121a2d4bae6768c34abfe8000d77a2be8b05bfc3d8",
+        "updated": "2026-10-23T11:26:29+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "d63a7608e1b7a0169808ae2219805b1a18c25db49e29079f10359a068b1f6e06",
-        "updated": "2026-10-22T11:37:12+00:00",
+        "sha": "0de9dd8dad376c3eade2944c27db58997bd5519abd51340d380ec05b6ca3c0ac",
+        "updated": "2026-10-23T11:26:30+00:00",
         "pushed": true
     },
     "plist:Esign\/Esign_HSBC_Bank.plist": {
