@@ -40,58 +40,58 @@
         "updated": "2026-09-12T10:34:21+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "22bc928374120b8a707a209b496b2dc876fd993ab9ddd9955643d8a0f990e614",
-        "updated": "2026-10-30T12:39:08+00:00",
+        "sha": "a4de89f5c0f5e4eeda6c3a671bf46552956f961abe874b574403823c663b9c79",
+        "updated": "2026-10-31T12:07:26+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "49132378e7da9396b3fd9a2eb27157e88e9251335fbacc05d433a47da61f1bae",
-        "updated": "2026-10-30T12:39:10+00:00",
+        "sha": "b970b009077bb56d822f5de27e5d10c951b51c9e38623ee28540f4dc493df410",
+        "updated": "2026-10-31T12:07:28+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "a5f113374075fe4d88acb07f0b3bf890d82a01a99b1bb3680c4e01a15b7ac4cd",
-        "updated": "2026-10-30T12:39:12+00:00",
+        "sha": "d430ffb52d7149262cf2bf974256f7fbf86f0caf499866d4dc072bde7e573c09",
+        "updated": "2026-10-31T12:07:30+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "e2950551cbb54c35acecfade3aaa4bbee0b95dd4d75661422421220663bfbb3a",
-        "updated": "2026-10-30T12:39:14+00:00",
+        "sha": "5149a1d778d2f37c6652d4be39c51befefee10a399fe4bc97acb6ff2b4c3c51b",
+        "updated": "2026-10-31T12:07:32+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "4757e806535e2471d536c4e0ae1ba733bd7b5649155d69c6d49ec11cf90eed6e",
-        "updated": "2026-10-30T12:39:16+00:00",
+        "sha": "e081f54400c636e52f97353f82147ccb088099bbc03717a096878fbbf238810b",
+        "updated": "2026-10-31T12:07:33+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "a1cae635822e35dae8bf8df9aa3ff06b0b3eb5d7737010927ff0da77ab4fd377",
-        "updated": "2026-10-30T12:39:17+00:00",
+        "sha": "e1b1f8a6d793000303109a88318d4ae4b9be645b4bb807e44d61d7d582c6badd",
+        "updated": "2026-10-31T12:07:35+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "2e84c70907ea884246ec1cbd593d747c3eb62e89fccdf764a485c2555f11bcea",
-        "updated": "2026-10-30T12:39:19+00:00",
+        "sha": "1d6b89930a53dd359324e060e655979a0520ec3f7fbc801c2a3b27b26bbbc793",
+        "updated": "2026-10-31T12:07:37+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "768e7b87223ada69f28e1c390ece6c7375f2a0444176bc26bcc2a909c1f163dd",
-        "updated": "2026-10-30T12:39:21+00:00",
+        "sha": "1966679a9cf4e919220621fc1052ea19dc08f5f3e255671b7e5992afca154e45",
+        "updated": "2026-10-31T12:07:39+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "d3661e5bd3aab7e26d7937892a4857c7d415e51fbad0225649ca7809b00018b0",
-        "updated": "2026-10-30T12:39:23+00:00",
+        "sha": "43580fa0b7b2b97155654c33f41824794f05081493e08e2617b7aa9e690786dd",
+        "updated": "2026-10-31T12:07:41+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "e7547232663c09c1c67abf28ea8cd1d6a2767be34eec348f763c3adb4ab063f5",
-        "updated": "2026-10-30T12:39:25+00:00",
+        "sha": "d2d3dae46697f5c8605857f94f47cf95e9005f6291372f96352d20e4b0a93b47",
+        "updated": "2026-10-31T12:07:43+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "f89501933b258de8fb909105c4ee8a977b949171595123cf723ba27679f4febc",
-        "updated": "2026-10-30T12:39:27+00:00",
+        "sha": "a8c129d7b60c96f42d36beae05e1fd25801e7a5a8c52aea368d039fbf99e857d",
+        "updated": "2026-10-31T12:07:45+00:00",
         "pushed": true
     },
     "plist:Esign\/Esign_HSBC_Bank.plist": {
@@ -293,5 +293,33 @@
     "plist:Scarlet\/Scarlet_Rural.plist": {
         "sha": "bb257c310f01d7f7b09ac4cf01ad398dbfbb67c21db0d9cfedab1ed32e048c8b",
         "updated": "2026-10-27T11:59:07+00:00"
+    },
+    "plist:Esign\/Esign_RAKUTEN_1_NEW_SERVER.plist": {
+        "sha": "5c3f65cb0280bb4bb636726f53f3266a42dcb33c34b982a06c0fe8e435fe7e16",
+        "updated": "2026-10-31T12:06:36+00:00"
+    },
+    "plist:Esign\/Esign_RAKUTEN_2_NEW_SERVER.plist": {
+        "sha": "13f49ec8254fc87e7b0f89962e323160c4e44b4a495467e94934619ca4af1e5e",
+        "updated": "2026-10-31T12:06:38+00:00"
+    },
+    "plist:Esign\/Esign_Rural_NEW_SERVER.plist": {
+        "sha": "705e30eda4b300fc5fa61490e48bf9cdb756d0e45d1807f6eb081506ec5b701c",
+        "updated": "2026-10-31T12:06:41+00:00"
+    },
+    "plist:Esign\/Esign_Beihang_1_NEW_SERVER.plist": {
+        "sha": "4571c0ba308120dd6483fdf4b7e29c0c1824e2acdc493370a64138cb12bdb209",
+        "updated": "2026-10-31T12:06:43+00:00"
+    },
+    "plist:Esign\/Esign_Beihang_2_NEW_SERVER.plist": {
+        "sha": "eea5d35d4254cbc2479346254a007eac3c21e3e45c151a7b55c56a90d50e177d",
+        "updated": "2026-10-31T12:06:45+00:00"
+    },
+    "plist:Esign\/Esign_VINWASH_NEW_SERVER.plist": {
+        "sha": "524082ae90909605b9d1d2c812d4d86a176e3cdf71b0bb529a8c630fc4017b08",
+        "updated": "2026-10-31T12:06:47+00:00"
+    },
+    "plist:Esign\/Esign_HSBC_NEW_SERVER.plist": {
+        "sha": "e17b6e5f75e4820e8e17af3877b1ec7c9db883893b25d87476670ad9c86ba5af",
+        "updated": "2026-10-31T12:06:49+00:00"
     }
 }
