@@ -40,58 +40,58 @@
         "updated": "2026-09-12T10:34:21+00:00"
     },
     "cert:de8773aad61da54e2936d34be0def2d4": {
-        "sha": "bfefa8c937a97565d97d24c212d3351c5a5985c04c62d3f8e0bfaeb99e2cebdf",
-        "updated": "2026-11-26T16:43:43+00:00",
+        "sha": "4ac9d102af203b1a718fd4883f8a750b1c5fb5b6750ba41843be05dfe706034b",
+        "updated": "2026-11-27T16:29:38+00:00",
         "pushed": true
     },
     "cert:f2e20b2bec2b47668089d625dc024328": {
-        "sha": "a0533e47abadea677d93358d1ef088da55d433fa1bfcf0f7a021bb3474bd6355",
-        "updated": "2026-11-26T16:43:45+00:00",
+        "sha": "66c28bd8a85c943502495970b0984452a02022e05a3e52ae11a3d3ac5a25bb17",
+        "updated": "2026-11-27T16:29:40+00:00",
         "pushed": true
     },
     "cert:f6db313014f9ce2407fa183bdd44f359": {
-        "sha": "e632cfda813ed5e624bcd188906245cd228593c70c1d1c6e84a1c40d7d3b2cc2",
-        "updated": "2026-11-26T16:43:46+00:00",
+        "sha": "389fc3a115c29cfcb317a403d9242d585a909ed883a2e9573cafec3361649bb9",
+        "updated": "2026-11-27T16:29:42+00:00",
         "pushed": true
     },
     "cert:4be8ed2fd0a0a7a4c3c25d77d1711581": {
-        "sha": "a8d78edca005863e927f6c857da98cf105c5bf3c01f532d31b1ef82fbd1a43c0",
-        "updated": "2026-11-26T16:43:48+00:00",
+        "sha": "59c0d169d191e79b24ca3dbf17047e928ae0334f4593aaad835e797cc95e17bc",
+        "updated": "2026-11-27T16:29:43+00:00",
         "pushed": true
     },
     "cert:84acda23d00987c8729d546bb71b8710": {
-        "sha": "d57d3512ae1a26e613ea83da93614fc6a6cef6cddb49179e0c4a518dbb2c0ff5",
-        "updated": "2026-11-26T16:43:49+00:00",
+        "sha": "2f30293d47a4a40696a10da93692b6f1c3858e4fdcc1a5f69f0761d9cabe9abb",
+        "updated": "2026-11-27T16:29:45+00:00",
         "pushed": true
     },
     "cert:6848ffad1500d2d750be9700ecd6c3bf": {
-        "sha": "6bea44cdfa19fa354dd17afda784f3bfdc7dc1a4bc7b8e1d32a78188436d933a",
-        "updated": "2026-11-26T16:43:51+00:00",
+        "sha": "548a1e62cd9c40a8f9d1400c6f0dc85e2a83a382f7a959514498066f7c95d260",
+        "updated": "2026-11-27T16:29:46+00:00",
         "pushed": true
     },
     "cert:614a75f21c1ea76ab4755130a9d0db7f": {
-        "sha": "185333243062d5975dbb6633adf55000101da53cfc90e52d556cb8b440b4698c",
-        "updated": "2026-11-26T16:43:52+00:00",
+        "sha": "5ab179b4a334216464ef08e8f954c28b47ce2e5bd0cc9d1485c92e73bffcc85f",
+        "updated": "2026-11-27T16:29:48+00:00",
         "pushed": true
     },
     "cert:7e4f7b835a167ace5ea462744f23df36": {
-        "sha": "b3ed04aa6ab0ecfe2c5e3fdfa2f47074b71cedb2b38ffd8262482a0f6a6fe92b",
-        "updated": "2026-11-26T16:43:53+00:00",
+        "sha": "fc150a20df7e71eb3f28aeb3e9ba068832030dbc0437519614d412d644d113d6",
+        "updated": "2026-11-27T16:29:51+00:00",
         "pushed": true
     },
     "cert:f154dec49c2c0602aa208c19718f67a1": {
-        "sha": "81543ff5b79775d2f391b6f26cb78500db9d11a91c89b02f9c41e645fd6b2865",
-        "updated": "2026-11-26T16:43:55+00:00",
+        "sha": "a8027dee5f79d4c306cd75c393cb11fc131b445f600493fe6e54ab5f34bc38c4",
+        "updated": "2026-11-27T16:29:52+00:00",
         "pushed": true
     },
     "cert:a8db60601bce04e776add8f5600f8e8b": {
-        "sha": "58f74191762dac1597d0afb26b89c5ce750376babd17c035a6cc10bfb31ddc5e",
-        "updated": "2026-11-26T16:43:57+00:00",
+        "sha": "b6818728421e959ca7fbf8fd39c9c71d19cbef76d7f16d22e006724aac2dcd1f",
+        "updated": "2026-11-27T16:29:54+00:00",
         "pushed": true
     },
     "cert:33242d61c78947641b7bd7ac38cb3336": {
-        "sha": "67b43f597d527678498ce0cef5fecb13e9b0ccdec65d2772cc1ee71e02df5150",
-        "updated": "2026-11-26T16:43:58+00:00",
+        "sha": "f72961fea3d96fce58249ad76dc4478cc0aa0606fc07055d2b7f386f8316ff7e",
+        "updated": "2026-11-27T16:29:55+00:00",
         "pushed": true
     },
     "plist:Esign\/Esign_HSBC_Bank.plist": {
